@@ -18,7 +18,8 @@ export default function WeatherApp() {
     if (!city.trim()) return;
     setLoading(true);
     try {
-      const response = await fetch(`http://localhost:8080/weather/${encodeURIComponent(city)}`);
+      // Replace localhost with your live API URL on Render
+      const response = await fetch(`https://weather-app-backend-1-zwe1.onrender.com/weather/${encodeURIComponent(city)}`);
       if (!response.ok) throw new Error("Weather data not found");
       const data = await response.json();
 
